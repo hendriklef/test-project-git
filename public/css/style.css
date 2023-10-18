@@ -1,0 +1,76 @@
+.container { 
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 33% 33% 33%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "level-Button Display plus-button"
+    "mode-button Display minus-button"
+    "logo Display on-off-button";
+    border: 10px solid #1C6EA4;
+    border-radius: 10px;
+}
+
+#display {
+    margin: 2.5vh;
+    padding: 2.5vh;
+    font-size: 3vh;
+    background-color: #aedcde;
+    border: 10px solid #1C6EA4;
+    grid-area: Display;
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .container {
+        height: 40vh;
+        width: 50vw;
+        margin: 0vw 10vh 10vh 25vw;
+    }
+
+}
+
+.material-icons {
+    font-size: 10vh;
+}
+
+.button {
+    text-align: center;
+}
+
+p {
+    margin: 0px;
+}
+
+
+
+#level-Button {
+    grid-area: level-Button;
+}
+
+#mode-button {
+    grid-area: mode-button;
+}
+
+#logo {
+    grid-area: logo;
+}
+
+#plus-button {
+    grid-area: plus-button;
+}
+
+#minus-button {
+    grid-area: minus-button;
+}
+
+#on-off-button {
+    grid-area: on-off-button;
+}
+
+#logoImg{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
