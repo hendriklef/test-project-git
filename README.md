@@ -1,3 +1,7 @@
 # MMI_WS23_24
 
-Demo Project for MMI WS 23/24. We will use this project to apply theoretical knowledge (e.g. versioning via Git, Refactoring, Unit Tests, Usability Tests)
+This project is part of moulde 2 and a copy of the provided files from GitHub via Moodle.
+
+This repository belongs to Hendrik Lef.
+
+Add your comments down below:
