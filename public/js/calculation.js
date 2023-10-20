@@ -1,20 +1,24 @@
+
+//declaration of variables
 const powerButton = document.getElementById("display");
-
-let temperature = 21, mode = "summer", level = 0, isOn = true;
-
-
 const dateObj = document.getElementById("date");
 const temperatureObj = document.getElementById("temperature");
 const levelObj = document.getElementById("level");
 const modusObj = document.getElementById("modus");
+const time = () => setInterval(updateTime, 1000)
 
+let temperature = 21;
+mode = "summer";
+level = 0;
+isOn = true;
+
+//add events to DOM items
 document.getElementById("on-off-button").addEventListener("click", turnOnOff);
 document.getElementById("level-button").addEventListener("click", levelChange);
 document.getElementById("mode-button").addEventListener("click", modeChange);
 document.getElementById("plus-button").addEventListener("click", increaseTemperature);
 document.getElementById("minus-button").addEventListener("click", decreaseTemperature);
 
-const time = () => setInterval(updateTime, 1000)
 
 function updateTime() {
     dateObj.innerText = new Date().toLocaleString('en-GB', {timeZone: 'UTC'}) + " - "
@@ -40,7 +44,8 @@ function updateDisplay() {
     }
 }
 
-// this should be a very helpful comment
+// Function that determines greeting based on real time
+// Function also defined in auxiliaryAPI.js
 getGreetingDependOnTime = function (myDate) {
     let timeBegin = '06:00';
     let timeEnd = '22:00';
@@ -48,12 +53,10 @@ getGreetingDependOnTime = function (myDate) {
     const dateEnd = new Date('2020-01-01 ' + timeEnd);
     const dateCurrent = new Date('2020-01-01 ' + myDate.getHours() + ":" + myDate.getMinutes());
 
-    if (dateBegin.getTime() < dateCurrent.getTime()) { //"guten morgen"
+    if (dateBegin.getTime() < dateCurrent.getTime()) {
         if (dateCurrent.getTime() >= dateEnd.getTime()) {
-
             return "Guten Morgen"
-        }
-        else {
+        } else {
             return "Guten Abend"
         }
     } else {
@@ -63,11 +66,13 @@ getGreetingDependOnTime = function (myDate) {
     }
 }
 
+//increase tempure by minusing temperature
 function increaseTemperature() {
     temperature--;
     updateDisplay();
 }
 
+//decrease temperature by increasing temperature
 function decreaseTemperature() {
     temperature++;
     updateDisplay();

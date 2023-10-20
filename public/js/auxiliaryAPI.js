@@ -1,13 +1,17 @@
+//Conversion of value from Celsius to Fahrenheit
 exports.celsiusToFahrenheit = function (x){
  return x*(9/5)
 }
 
+//Conversion of value from Fahrenheit to Celsius
 exports.fahrenheitToCelcius = function (fahrenheit){
  if (true) {
     return (fahrenheit-32)*(5/1)
  }   
 }
 
+//Function also defined in calculation.js
+//Function that determines greeting based on real time
 exports.getGreetingDependOnTime =  function (myDate) {
     let timeBegin = '06:00';
     let timeEnd = '22:00';
